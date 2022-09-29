@@ -1,0 +1,198 @@
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
+
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  z-index: 300;
+  .menu {
+    @extend %fullspace;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: transform 0.5s;
+
+    &-line {
+      width: 70%;
+      height: 4px;
+      background-color: $color-primary;
+      transform-origin: right;
+      transition: all 0.5s 0.5s;
+      @media (max-width: 500px) {
+        height: 2px;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.logo {
+  font-size: 70px;
+  color: $color-primary;
+  @include flexlayout;
+  width: 110px;
+  height: 110px;
+  margin-right: 20px;
+  text-decoration: none;
+  border: 3px solid $color-primary;
+  border-radius: 50%;
+  @media (max-width: 500px) {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-width: 2px;
+  }
+}
+.main-name {
+  color: $color-secondary;
+  font-family: $font-nunito;
+  font-size: 50px;
+  @include textstyle;
+  @media (max-width: 500px) {
+    font-size: 40px;
+  }
+}
+.sup-name {
+  @include textstyle;
+  font-family: $font-josefinsans;
+  font-size: 18px;
+  color: $color-secondary;
+  text-align: center;
+}
+.main-heading {
+  margin-top: 15%;
+  font-family: $font-dansingScript;
+  font-size: 100px;
+  font-weight: 300;
+  color: $color-primary;
+  margin-bottom: 80px;
+  @media (max-width: 1600px) {
+    font-size: 80px;
+    margin-bottom: 50;
+  }
+  @media (max-width: 1300px) {
+    font-size: 80px;
+    margin-bottom: 30;
+  }
+  @media (max-width: 700px) {
+    font-size: 80px;
+    margin-bottom: 40;
+  }
+  @media (max-width: 650px) {
+    font-size: 60px;
+  }
+  @media (max-width: 500px) {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+.sup-heading {
+  font-family: $font-josefinsans;
+  font-size: 60px;
+  font-weight: 300;
+  color: $color-secondary;
+  text-align: center;
+  margin-bottom: 80px;
+  @media (max-width: 1600px) {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 500px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+.main-btn {
+  font-family: $font-josefinsans;
+  width: 170px;
+  height: 45px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: transparent;
+  color: $color-primary;
+  border-radius: 40%;
+  border: 1px solid $color-primary;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-dark;
+  }
+  @media (max-width: 500px) {
+    font-size: 10px;
+    width: 130px;
+    height: 30px;
+  }
+}
+.card {
+  margin-top: 10%;
+  width: 33.3333%;
+  height: 30vw;
+  overflow: hidden;
+  position: relative;
+  &:hover .card-overlay {
+    left: 0;
+  }
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: -130%;
+    @extend %fullspace;
+    transition: left 0.7s;
+    background-color: rgba($color-primary, 0.6);
+    color: $color-white;
+    z-index: 10;
+    @include flexlayout;
+    flex-direction: column;
+    &-heading {
+      font-family: $font-nunito;
+      font-size: 50px;
+      @include textstyle(capitalize);
+      @media (max-width: 450px) {
+        display: none;
+      }
+    }
+    &-paragraph {
+      font-family: $font-josefinsans;
+      font-size: 30px;
+      margin-bottom: 30px;
+      @include textstyle(capitalize);
+      @media (max-width: 650px) {
+        font-size: 15px;
+        @media (max-width: 450px) {
+          display: none;
+        }
+      }
+    }
+    &-btn {
+      font-family: $font-nunito;
+      width: 140px;
+      height: 40px;
+      background-color: $color-primary;
+      color: $color-white;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      &:hover {
+        color: black;
+      }
+      @media (max-width: 650px) {
+        font-size: 10px;
+        width: 100px;
+        height: 30px;
+      }
+    }
+  }
+  &-img {
+    @extend %fullspace;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+}
